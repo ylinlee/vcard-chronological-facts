@@ -1,0 +1,96 @@
+<!-- Imports polymer -->
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../vcard-chronological-facts-item/vcard-chronological-facts-item.html">
+<!-- Defines element markup -->
+<dom-module id="vcard-chronological-facts">
+    <template>
+        <style>
+        .resume-box {
+            padding: 0;
+        }
+        
+        .resume-box /deep/ h4 {
+            margin-top: 0;
+        }
+        
+        h2 {
+            margin: 0 0 45px;
+            font-size: 20px;
+            color: #141414;
+            letter-spacing: 1px;
+            font-weight: 600;
+            text-transform: uppercase;
+            position: relative;
+        }
+        
+        .section-background {
+            background: #fff;
+            padding: 80px 60px;
+        }
+        
+        h2::before {
+            position: absolute;
+            right: 0;
+            bottom: -5px;
+            background: #141414;
+            height: 1px;
+            content: '';
+            left: 0;
+        }
+        
+        li {
+            margin-bottom: 20px;
+            list-style-type: none;
+        }
+        li:last-child {
+            margin: 0;
+        }
+        </style>
+        <!-- Así mostramos las variables definidas {{}} -->
+        <div class="section-background col-xs-12 col-sm-6" data-mh$="{{matchHeight}}">
+            <h2>{{headerTitle}}</h2>
+            <ul class="resume-box">
+                <template is="dom-repeat" items="{{chronologicalFacts}}">
+                    <li>
+                        <vcard-chronological-facts-item chronological-facts-item="{{item}}" match-height="{{matchHeight}}-item-{{index}}"></vcard-chronological-facts-item>
+                    </li>
+                </template>
+            </ul>
+        </div>
+    </template>
+</dom-module>
+<!-- Registers custom element -->
+<script>
+Polymer({
+    is: 'vcard-chronological-facts', //Registramos el nombre del componente
+    properties: { //Propiedades del componente
+        chronologicalFacts: {
+            type: Array, //Propiedad (o atributo) llamado 'nombre' de tipo String 
+            value: [{
+                    fecha: '2013-2015',
+                    proyecto: 'Project0',
+                    puesto: 'Front-End Developer',
+                    description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.'
+                }, {
+                    fecha: '2011-2013',
+                    proyecto: 'Project01',
+                    puesto: 'Back-End Developer',
+                    description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.'
+                }, {
+                    fecha: '2009-2011',
+                    proyecto: 'Project02',
+                    puesto: 'Front-End Developer',
+                    description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.'
+                }] //y valor por defecto
+        },
+        headerTitle: {
+            type: String,
+            value: 'title'
+        },
+        matchHeight: {
+            type: String,
+            value: 'mh-chronological-facts'
+        }
+    }
+});
+</script>

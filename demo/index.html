@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>vcard-chronological-facts</title>
+    <!-- Font Awesome Icons -->
+    <link href="../../../font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="../../../styles/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery Library -->
+    <script src="../../../scripts/jquery.min.js"></script>
+    <script src="../../../scripts/jquery.matchHeight.js"></script>
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="../vcard-chronological-facts.html">
+    <script>
+    window.addEventListener('WebComponentsReady', function(e) {
+        var elements = {};
+        $('[data-match-height], [data-mh]').each(function() {
+            var self = $(this);
+            var dataMh = self.attr('data-mh') || self.attr('data-match-height');
+            elements[dataMh] = dataMh in elements ? elements[dataMh].add(self) : self;
+        });
+        $.each(elements, function() {
+            this.matchHeight(true);
+        });
+
+    });
+    </script>
+</head>
+
+<body>
+    <h3>Vcard chronological facts</h3>
+    <section>
+        <div class="container-fluid">
+            <div class="row">
+                <vcard-chronological-facts></vcard-chronological-facts>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
