@@ -14,17 +14,12 @@
   "main": "vcard-chronological-facts.html",
   "repository": {
     "type": "git",
-    "url": "git://github.com/vcard/vcard-chronological-facts.git"
+    "url": "https://github.com/ylinlee/vcard-chronological-facts.git"
   },
   "license": "MIT",
   "ignore": [],
   "dependencies": {
-    "promise-polyfill": "polymerlabs/promise-polyfill#^1.0.0",
-    "polymer": "Polymer/polymer#^1.0.0",
+        "polymer": "Polymer/polymer#1.0.0",
     "vcard-chronological-facts-item":"git://github.com/vcard/vcard-chronological-facts-item.git#0.0.1"
-  },
-  "devDependencies": {
-    "web-component-tester": "polymer/web-component-tester#^3.4.0",
-    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0"
   }
 }
