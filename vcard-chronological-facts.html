@@ -1,5 +1,6 @@
 <!-- Imports polymer -->
 <link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../iron-media-query/iron-media-query.html">
 <link rel="import" href="../vcard-chronological-facts-item/vcard-chronological-facts-item.html">
 <!-- Defines element markup -->
 <dom-module id="vcard-chronological-facts">
@@ -45,11 +46,17 @@
         li:last-child {
             margin: 0;
         }
+        .resume-box[media-query-991] /deep/ span::before {
+            content: "@";
+            padding: 0 2px 0 3px;
+            font-size: 13px;
+        }
         </style>
+        <iron-media-query query="(max-width: 991px)" query-matches="{{mediaQuery991}}"></iron-media-query>
         <!-- Así mostramos las variables definidas {{}} -->
         <div class="section-background col-xs-12 col-sm-6" data-mh$="{{matchHeight}}">
             <h2>{{headerTitle}}</h2>
-            <ul class="resume-box">
+            <ul class="resume-box"  media-query-991$="{{mediaQuery991}}">
                 <template is="dom-repeat" items="{{chronologicalFacts}}">
                     <li>
                         <vcard-chronological-facts-item chronological-facts-item="{{item}}" match-height="{{matchHeight}}-item-{{index}}"></vcard-chronological-facts-item>
