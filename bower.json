@@ -1,6 +1,6 @@
 {
   "name": "vcard-chronological-facts",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Chronological facts",
   "private": true,
   "authors": [
@@ -19,7 +19,7 @@
   "license": "MIT",
   "ignore": [],
   "dependencies": {
-        "polymer": "Polymer/polymer#1.0.0",
-    "vcard-chronological-facts-item":"git://github.com/ylinlee/vcard-chronological-facts-item.git#0.0.2"
+        "polymer": "Polymer/polymer#1.4.0",
+    "vcard-chronological-facts-item":"git://github.com/ylinlee/vcard-chronological-facts-item.git#0.0.3"
   }
 }
